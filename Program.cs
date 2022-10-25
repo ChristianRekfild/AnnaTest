@@ -33,9 +33,17 @@ using (StreamReader reader = new StreamReader(fileStream))
         }
     }
 
-    foreach( Detail d in details)
+
+    string path = Environment.CurrentDirectory;
+    using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "WriteLines.txt")))
     {
-        Console.WriteLine($"{d.No}%{d.Name}%{d.Qty}");
+        foreach (Detail d in details)
+        {
+            outputFile.WriteLine($"{d.No}%{d.Name}%{d.Qty}");
+        }
     }
+
+
+    
     
 }
