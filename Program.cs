@@ -13,7 +13,7 @@ using (StreamReader reader = new StreamReader(fileStream))
         //Console.WriteLine(line);
         
         Detail detail = new Detail();
-        detail.No = Convert.ToInt32(fields[0]);
+        detail.No = fields[0];
         detail.Name = fields[1];
         detail.Qty = Convert.ToInt32(fields[2]);
 
